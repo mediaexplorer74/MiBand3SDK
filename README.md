@@ -1,9 +1,9 @@
-# Mi Band 2 SDK
+# Mi Band 3 SDK
 
-SDK for pairing and interacting with Mi Band 2 via .NET and UWP.
+SDK for pairing and interacting with Mi Band 3 via .NET and UWP.
 
 ## Project Description
-This project was written to interact Mi Band 2 from UWP applications.
+This project was written to interact Mi Band 3 from UWP applications.
 
 Used GATT services and characteristics is unofficial and taken from projects like:
 
@@ -24,20 +24,20 @@ Minimum version: Windows 10.0.10586
 You can install package via Package Manager:
 
 ```C#
-Install-Package MiBand2SDK
+Install-Package MiBand3SDK
 ```
 
 or via NuGet in Visual Studio.
 
 # How to use
 
-**To avoid unhandled exceptions, first connect and pair (authenticate) Application with Mi Band 2.**
+**To avoid unhandled exceptions, first connect and pair (authenticate) Application with Mi Band 3.**
 
 ## Connect to Band
 
 ```C#
 // First initialize MiBand2 object to interact with Band.
-MiBand2 band = new MiBand2();
+MiBand3 band = new MiBand3();
 ```
 
 First you need find and connect device in Windows 10 manually.
@@ -76,7 +76,7 @@ if (await band.ConnectAsync() && await band.Identity.IsAuthenticated())
 
 ## Battery
 
-Battery property returns [BatteryState](https://github.com/AL3X1/Mi-Band-2-SDK/blob/master/MiBand2SDK/Models/BatteryState.cs) object. 
+Battery property returns [BatteryState](https://github.com/AL3X1/Mi-Band-3-SDK/blob/master/MiBand3SDK/Models/BatteryState.cs) object. 
 You can take charge level, total cycles of charging, last charging date, and check is device charging right now.
 
 To get battery status, use this steps:
@@ -133,7 +133,7 @@ namespace BackgroundTasks
     public sealed class CheckHeartRateInBackgroundTask : IBackgroundTask
     {
         private BackgroundTaskDeferral _defferal;
-        private static MiBand2SDK.MiBand2 band = new MiBand2SDK.MiBand2();
+        private static MiBand3SDK.MiBand3 band = new MiBand3SDK.MiBand3();
 
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
