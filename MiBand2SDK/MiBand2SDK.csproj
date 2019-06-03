@@ -112,7 +112,7 @@
     <Compile Include="Components\Device.cs" />
     <Compile Include="Components\Display.cs" />
     <Compile Include="Components\HeartRate.cs" />
-    <Compile Include="Components\Notifications.cs" />
+    <Compile Include="Components\Notification.cs" />
     <Compile Include="Components\WearLocation.cs" />
     <Compile Include="MiBand2.cs" />
     <Compile Include="Enums\Alarm.cs" />
@@ -122,7 +122,7 @@
     <Compile Include="Enums\Display.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Enums\HeartInfo.cs" />
-    <Compile Include="Enums\Notifications.cs" />
+    <Compile Include="Enums\Notification.cs" />
     <Compile Include="Models\StepInfo.cs" />
     <Compile Include="Enums\WearLocation.cs" />
     <Compile Include="Enums\WristMode.cs" />
