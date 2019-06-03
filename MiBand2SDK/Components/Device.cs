@@ -14,14 +14,14 @@ namespace MiBand2SDK.Components
 {
     public class Device
     {
-        private Guid MIBAND2_SERVICE = new Guid("0000fee0-0000-1000-8000-00805f9b34fb");
-        private Guid DEVICE_NAME_SERVICE = new Guid("00001800-0000-1000-8000-00805f9b34fb");
+        private Guid MIBAND3_SERVICE = new Guid("0000fee1-0000-1000-8000-00805f9b34fb"); // Mi Band 2: 0000fee0-0000-1000-8000-00805f9b34fb
+        private Guid DEVICE_NAME_SERVICE = new Guid("00001800-0000-1000-8000-00805f9b34fb"); // Generic Access on Mi Band 3
         private Guid DEVICE_NAME_CHARACTERISTIC = new Guid("00002a00-0000-1000-8000-00805f9b34fb");
         private Guid DEVICE_INFO_SERVICE = new Guid("0000180a-0000-1000-8000-00805f9b34fb");
         private Guid SERIAL_NUMBER_CHARACTERISTIC = new Guid("00002a25-0000-1000-8000-00805f9b34fb");
         private Guid HARDWARE_REVISION_CHARACTERISTIC = new Guid("00002a27-0000-1000-8000-00805f9b34fb");
         private Guid SOFTWARE_REVISION_CHARACTERISTIC = new Guid("00002a28-0000-1000-8000-00805f9b34fb");
-        private Guid DEVICE_EVENT_CHARACTERISTIC = new Guid("00000010-0000-3512-2118-0009af100700");
+        private Guid DEVICE_EVENT_CHARACTERISTIC = new Guid("00000010-0000-3512-2118-0009af100700"); // Xiaomi Button Characteristic on Mi Band 3
 
         /// <summary>
         /// Subscribe to device events (touch to band)
@@ -30,7 +30,7 @@ namespace MiBand2SDK.Components
         /// <returns></returns>
         public async Task SubscribeToDeviceEventNotificationsAsync(TypedEventHandler<GattCharacteristic, GattValueChangedEventArgs> eventHandler)
         {
-            var deviceCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND2_SERVICE, DEVICE_EVENT_CHARACTERISTIC);
+            var deviceCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND3_SERVICE, DEVICE_EVENT_CHARACTERISTIC);
             var deviceNotify = await deviceCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(GattClientCharacteristicConfigurationDescriptorValue.Notify);
 
             Debug.WriteLine("Subscribe to device event notifications");
