@@ -14,8 +14,7 @@ namespace MiBand2SDK.Components
     {
         private Guid MI_BAND_SERVICE = new Guid("0000fee0-0000-1000-8000-00805f9b34fb");
         private Guid CURRENT_TIME_CHARACTERISTIC = new Guid("00002a2b-0000-1000-8000-00805f9b34fb");
-        private Guid DISPLAY_DATE_CHARACTERISTIC = new Guid("00000003-0000-3512-2118-0009AF100700");
-        private Guid CONFIGURATION_CHARACTERISTIC = new Guid("00000003-0000-3512-2118-0009af100700");
+        private Guid CONFIGURATION_CHARACTERISTIC = new Guid("00000003-0000-3512-2118-0009af100700"); // Xiaomi Configuration Characteristic on Mi Band 3
 
         /// <summary>
         /// Set display date mode (datetime or time, 12 hour or 24 hour)
@@ -47,7 +46,7 @@ namespace MiBand2SDK.Components
 
             Debug.WriteLine("Set display time");
 
-            var characteristic = await Gatt.GetCharacteristicByServiceUuid(MI_BAND_SERVICE, DISPLAY_DATE_CHARACTERISTIC);
+            var characteristic = await Gatt.GetCharacteristicByServiceUuid(MI_BAND_SERVICE, CONFIGURATION_CHARACTERISTIC);
             var gattWriteResult = await characteristic.WriteValueAsync(date.AsBuffer());
             return gattWriteResult == GattCommunicationStatus.Success;
         }
