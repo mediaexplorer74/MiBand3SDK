@@ -8,15 +8,27 @@ using Windows.Devices.Enumeration;
 namespace MiBand2SDK
 {
     public class MiBand2
-    {
-        public Identity Identity = new Identity();
-        public Battery Battery = new Battery();
-        public Device Device = new Device();
-        public Display Display = new Display();
-        public Activity Activity = new Activity();
-        public HeartRate HeartRate = new HeartRate();
-        public WearLocation WearLocation = new WearLocation();
-        public Notifications Notifications = new Notifications();
+    {        
+        public MiBand2()
+        {
+            Identity = new Identity();
+            Battery = new Battery();
+            Device = new Device();
+            Display = new Display();
+            Activity = new Activity();
+            HeartRate = new HeartRate();
+            WearLocation = new WearLocation();
+            Notifications = new Notifications();
+        }
+        
+        public Identity Identity { get; }
+        public Battery Battery { get; }
+        public Device Device { get; }
+        public Display Display { get; }
+        public Activity Activity { get; }
+        public HeartRate HeartRate { get; }
+        public WearLocation WearLocation { get; }
+        public Notifications Notifications { get; }
         
         /// <summary>
         /// Connect to paired device
