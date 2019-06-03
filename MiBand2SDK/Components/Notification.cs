@@ -13,13 +13,13 @@ using Windows.Devices.Bluetooth.GenericAttributeProfile;
 
 namespace MiBand2SDK.Components
 {
-    public class Notifications
+    public class Notification
     {
-        private Guid ALERT_LEVEL_SERVICE = new Guid("00001802-0000-1000-8000-00805f9b34fb");
+        private Guid ALERT_LEVEL_SERVICE = new Guid("00001802-0000-1000-8000-00805f9b34fb"); // Immediate Alert on Mi Band 3
         private Guid NOTIFICATION_SERVICE = new Guid("00001811-0000-1000-8000-00805F9B34FB");
         private Guid ALERT_LEVEL_CHARACTERISTIC = new Guid("00002a06-0000-1000-8000-00805f9b34fb");
-        private Guid SEND_ALERT_CHARACTERISTIC = new Guid("00002a46-0000-1000-8000-00805f9b34fb");
-        private Guid MIBAND2_SERVICE = new Guid("0000fee0-0000-1000-8000-00805f9b34fb");
+        private Guid SEND_ALERT_CHARACTERISTIC = new Guid("00002a46-0000-1000-8000-00805f9b34fb"); // New Alert on Mi Band 3
+        private Guid MIBAND3_SERVICE = new Guid("0000fee0-0000-1000-8000-00805f9b34fb");
         private Guid CONFIGURATION_CHARACTERISTIC = new Guid("00000003-0000-3512-2118-0009af100700");
 
 
@@ -30,7 +30,7 @@ namespace MiBand2SDK.Components
         /// <returns></returns>
         public async Task<bool> SetFitnessGoalNotification(FitnessGoalNotification notification)
         {
-            GattCharacteristic notificationCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND2_SERVICE, CONFIGURATION_CHARACTERISTIC);
+            GattCharacteristic notificationCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND3_SERVICE, CONFIGURATION_CHARACTERISTIC);
             byte[] setNotificationCmd = new byte[] { 6, 0, (byte)notification };
 
             return await notificationCharacteristic.WriteValueAsync(setNotificationCmd.AsBuffer()) == GattCommunicationStatus.Success;
@@ -43,7 +43,7 @@ namespace MiBand2SDK.Components
         /// <returns></returns>
         public async Task<bool> SetDisplayCallerInfo(DisplayCallerInfo callerInfo)
         {
-            GattCharacteristic notificationCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND2_SERVICE, CONFIGURATION_CHARACTERISTIC);
+            GattCharacteristic notificationCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND3_SERVICE, CONFIGURATION_CHARACTERISTIC);
             byte[] setDisplayCallerInfoCmd = new byte[] { 6, 16, 0, (byte)callerInfo };
 
             return await notificationCharacteristic.WriteValueAsync(setDisplayCallerInfoCmd.AsBuffer()) == GattCommunicationStatus.Success;
@@ -148,7 +148,7 @@ namespace MiBand2SDK.Components
         /// <returns></returns>
         public async Task<bool> SetAlarmClock(AlarmStatus status, int alarmSlot, List<AlarmDays> alarmDays, int hour, int minute)
         {
-            GattCharacteristic notificationCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND2_SERVICE, CONFIGURATION_CHARACTERISTIC);
+            GattCharacteristic notificationCharacteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND3_SERVICE, CONFIGURATION_CHARACTERISTIC);
             int maxAlarmSlots = 5;
             int days = 0;
 
@@ -188,7 +188,7 @@ namespace MiBand2SDK.Components
             byte startHours = 0, byte startMinutes = 0, 
             byte endHours = 0, byte endMinutes = 0)
         {
-            var characteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND2_SERVICE, CONFIGURATION_CHARACTERISTIC);
+            var characteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND3_SERVICE, CONFIGURATION_CHARACTERISTIC);
             byte[] setDnd = null;
 
             if (dndMode != DoNotDisturbMode.SCHEDULED)
@@ -212,7 +212,7 @@ namespace MiBand2SDK.Components
             byte startHours, byte startMinutes,
             byte endHours, byte endMinutes)
         {
-            var characteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND2_SERVICE, CONFIGURATION_CHARACTERISTIC);
+            var characteristic = await Gatt.GetCharacteristicByServiceUuid(MIBAND3_SERVICE, CONFIGURATION_CHARACTERISTIC);
             byte[] data = new byte[] { 8, (byte)warningMode, 60, 0, startHours, startMinutes, endHours, endMinutes, startHours, startMinutes, endHours, endMinutes };
 
             return await characteristic.WriteValueAsync(data.AsBuffer()) == GattCommunicationStatus.Success;
