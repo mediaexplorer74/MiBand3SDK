@@ -15,7 +15,7 @@ namespace MiBand2SDK.Components
     {
         private Guid MI_BAND_SERVICE = new Guid("0000fee0-0000-1000-8000-00805f9b34fb");
         private Guid STEP_INFO_CHARACTERISTIC = new Guid("00000007-0000-3512-2118-0009af100700");
-        private Guid USER_SETTINGS_CHARACTERISTIC = new Guid("00000008-0000-3512-2118-0009AF100700");
+        private Guid USER_SETTINGS_CHARACTERISTIC = new Guid("00000008-0000-3512-2118-0009af100700"); // Xiaomi User Info Characteristic on Mi Band 3
 
         /// <summary>
         /// Get steps and activity info.
