@@ -7,9 +7,9 @@ using Windows.Devices.Enumeration;
 
 namespace MiBand3SDK
 {
-    public class MiBand2
+    public class MiBand3
     {        
-        public MiBand2()
+        public MiBand3()
         {
             Identity = new Identity();
             Battery = new Battery();
