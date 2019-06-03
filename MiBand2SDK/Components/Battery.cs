@@ -1,5 +1,5 @@
-﻿using MiBand2SDK.Models;
-using MiBand2SDK.Utils;
+﻿using MiBand3SDK.Models;
+using MiBand3SDK.Utils;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 
-namespace MiBand2SDK.Components
+namespace MiBand3SDK.Components
 {
     public class Battery
     {

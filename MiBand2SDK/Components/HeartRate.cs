@@ -1,5 +1,5 @@
-﻿using MiBand2SDK.Enums;
-using MiBand2SDK.Utils;
+﻿using MiBand3SDK.Enums;
+using MiBand3SDK.Utils;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Foundation;
 
-namespace MiBand2SDK.Components
+namespace MiBand3SDK.Components
 {
     public class HeartRate
     {

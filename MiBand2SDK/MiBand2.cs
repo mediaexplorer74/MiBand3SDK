@@ -1,11 +1,11 @@
-﻿using MiBand2SDK.Components;
-using MiBand2SDK.Utils;
+﻿using MiBand3SDK.Components;
+using MiBand3SDK.Utils;
 using System;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth;
 using Windows.Devices.Enumeration;
 
-namespace MiBand2SDK
+namespace MiBand3SDK
 {
     public class MiBand2
     {        

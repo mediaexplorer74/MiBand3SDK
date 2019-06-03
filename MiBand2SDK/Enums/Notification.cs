@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiBand2SDK.Enums
+namespace MiBand3SDK.Enums
 {
     public enum FitnessGoalNotification
     {

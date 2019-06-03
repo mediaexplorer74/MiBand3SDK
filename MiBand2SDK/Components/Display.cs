@@ -1,5 +1,5 @@
-﻿using MiBand2SDK.Enums;
-using MiBand2SDK.Utils;
+﻿using MiBand3SDK.Enums;
+using MiBand3SDK.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 
-namespace MiBand2SDK.Components
+namespace MiBand3SDK.Components
 {
     public class Display
     {

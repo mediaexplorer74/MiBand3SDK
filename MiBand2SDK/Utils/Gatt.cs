@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 
-namespace MiBand2SDK.Utils
+namespace MiBand3SDK.Utils
 {
     class Gatt
     {

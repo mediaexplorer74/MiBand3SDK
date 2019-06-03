@@ -7,8 +7,8 @@
     <ProjectGuid>{3E94B8D2-BC10-41B7-A3C5-63F23F9174E5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiBand2SDK</RootNamespace>
-    <AssemblyName>MiBand2SDK</AssemblyName>
+    <RootNamespace>MiBand3SDK</RootNamespace>
+    <AssemblyName>MiBand3SDK</AssemblyName>
     <DefaultLanguage>ru-RU</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>

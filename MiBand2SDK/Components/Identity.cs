@@ -1,5 +1,5 @@
-﻿using MiBand2SDK.Enums;
-using MiBand2SDK.Utils;
+﻿using MiBand3SDK.Enums;
+using MiBand3SDK.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +14,7 @@ using Windows.Security.Cryptography.Core;
 using Windows.Storage;
 using Windows.Storage.Streams;
 
-namespace MiBand2SDK.Components
+namespace MiBand3SDK.Components
 {
     public class Identity
     {
