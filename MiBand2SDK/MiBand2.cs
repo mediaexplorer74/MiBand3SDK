@@ -18,7 +18,7 @@ namespace MiBand2SDK
             Activity = new Activity();
             HeartRate = new HeartRate();
             WearLocation = new WearLocation();
-            Notifications = new Notifications();
+            Notifications = new Notification();
         }
         
         public Identity Identity { get; }
@@ -28,7 +28,7 @@ namespace MiBand2SDK
         public Activity Activity { get; }
         public HeartRate HeartRate { get; }
         public WearLocation WearLocation { get; }
-        public Notifications Notifications { get; }
+        public Notification Notifications { get; }
         
         /// <summary>
         /// Connect to paired device
