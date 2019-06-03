@@ -19,9 +19,9 @@ namespace MiBand2SDK.Components
     public class Identity
     {
         private Guid MI_BAND_SERVICE = new Guid("0000fee0-0000-1000-8000-00805f9b34fb");
-        private Guid AUTH_SERVICE = new Guid("0000FEE1-0000-1000-8000-00805F9B34FB");
+        private Guid AUTH_SERVICE = new Guid("0000fee1-0000-1000-8000-00805F9B34FB"); // Xiaomi MiBand2 Service on Mi Band 3
         private Guid AUTH_CHARACTERISTIC = new Guid("00000009-0000-3512-2118-0009af100700");
-        private Guid USERSETTINGS_CHARACTERISTIC = new Guid("00000008-0000-3512-2118-0009AF100700");
+        private Guid USERSETTINGS_CHARACTERISTIC = new Guid("00000008-0000-3512-2118-0009AF100700"); // Xiaomi User Info Characteristic on Mi Band 3
         private byte[] AUTH_SECRET_KEY = new byte[] { 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x40, 0x41, 0x42, 0x43, 0x44, 0x45 };
 
         private EventWaitHandle _WaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
@@ -39,7 +39,7 @@ namespace MiBand2SDK.Components
 
             foreach (var device in devices)
             {
-                if (device.Pairing.IsPaired && device.Name == "MI Band 2")
+                if (device.Pairing.IsPaired && device.Name.ToUpper() == "Mi Band 3".ToUpper())
                 {
                     deviceInfo = device;
                 }
