@@ -114,7 +114,7 @@
     <Compile Include="Components\HeartRate.cs" />
     <Compile Include="Components\Notification.cs" />
     <Compile Include="Components\WearLocation.cs" />
-    <Compile Include="MiBand2.cs" />
+    <Compile Include="MiBand3.cs" />
     <Compile Include="Enums\Alarm.cs" />
     <Compile Include="Models\BatteryState.cs" />
     <Compile Include="Enums\DateMode.cs" />

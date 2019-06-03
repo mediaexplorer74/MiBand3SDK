@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2018
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBand2SDK", "MiBand2SDK.csproj", "{3E94B8D2-BC10-41B7-A3C5-63F23F9174E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBand3SDK", "MiBand3SDK.csproj", "{3E94B8D2-BC10-41B7-A3C5-63F23F9174E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
