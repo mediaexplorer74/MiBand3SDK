@@ -73,6 +73,12 @@ namespace MiBand3SDK
                 await Gatt.bluetoothLEDevice.DeviceInformation.Pairing.UnpairAsync();
         }
 
-        public bool IsConnected() => Gatt.bluetoothLEDevice != null && Gatt.bluetoothLEDevice.ConnectionStatus == BluetoothConnectionStatus.Connected;
+        public bool IsConnected()
+        {
+            return 
+                Gatt.bluetoothLEDevice != null
+                && 
+                Gatt.bluetoothLEDevice.ConnectionStatus == BluetoothConnectionStatus.Connected;
+        }
     }
 }

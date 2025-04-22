@@ -39,7 +39,7 @@ namespace MiBand3SDK.Components
 
             foreach (var device in devices)
             {
-                if (device.Pairing.IsPaired && device.Name.ToUpper() == "Mi Band 3".ToUpper())
+                if (/*device.Pairing.IsPaired &&*/ device.Name.ToUpper() == "Mi Band 3".ToUpper())
                 {
                     deviceInfo = device;
                 }
@@ -121,7 +121,7 @@ namespace MiBand3SDK.Components
                 _AuthCharacteristic.ValueChanged += AuthCharacteristic_ValueChanged;
             }
 
-            _WaitHandle.WaitOne();
+            //Thread.Sleep(0);//_WaitHandle.WaitOne();
             return IsAuthenticated();
         }
 

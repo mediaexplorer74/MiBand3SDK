@@ -86,7 +86,8 @@ namespace MiBand3SDK.Components
                 {
                     _heartRateMeasurementCharacteristic.ValueChanged += HeartRateMeasurementCharacteristicValueChanged;
                     status = GattCommunicationStatus.Success;
-                    _WaitHandle.WaitOne();
+
+                    //Thread.Sleep(0);//_WaitHandle.WaitOne();
                 }
             }
 
